@@ -19,10 +19,10 @@
 % NV: TODO: These functions were moved to couch_replicator_docs
 % but it is still called from fabric_doc_update. Keep it here for now
 % later, update fabric to call couch_replicator_docs instead
--export([before_doc_update/2, after_doc_read/2]).
+-export([before_doc_update/3, after_doc_read/2]).
 
 
-before_doc_update(Doc, Db) ->
+before_doc_update(Doc, Db, _UpdateType) ->
     couch_replicator_docs:before_doc_update(Doc, Db).
 
 after_doc_read(Doc, Db) ->
